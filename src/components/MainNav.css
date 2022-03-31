@@ -1,21 +1,59 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";
 
-html, body {
-  min-height: 100%;
+html,
+body,
+#root,
+.App {
+  height: auto;
   width: 100%;
-  background-color: #f7f9ff;
+  background: #fff;
 }
 
-div#root {
-  background-color: #f7f9ff;
+.contents {
+  text-align: center;
+}
+
+/* ------------ responsive web ----------- */
+@media only screen and (min-width: 960px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+  }
+}
+@media only screen and (min-width: 2000px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+  }
+}
+@media only screen and (max-device-width: 480px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+  }
+}
+@media only screen and (device-width: 768px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* ------------ navbar style ------------ */
 
 .navbar {
+  max-width: 100%;
+  height: 70px;
   background: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   opacity: 0.9;
+  background-color: #f1f3f5;
 }
 
 .navbar-brand {
@@ -36,10 +74,12 @@ div#root {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 3.5s linear;
-  display: flex;
+  display: inline-block;
   font-size: 1.8em !important;
   font-family: "Michroma";
-  padding-left: 1.5rem;
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
 }
 
 @keyframes textclip {
@@ -49,7 +89,8 @@ div#root {
 }
 
 #input {
-  margin: 2em;
+  margin-bottom: 2em;
+  margin-top: 2em;
   flex-direction: column;
 }
 
@@ -112,23 +153,27 @@ label {
   font-family: "SourceSansPro";
 }
 
+label#text{
+  margin: 10rem;
+}
+
+
 /* ------------ buttons ------------  */
 
 #calculate {
-  margin-left: 2rem;
-  margin-bottom: 2rem;
+  margin: 0;
 }
-
 div.btn.btn-two {
   color: #fff;
-  font-family: "Open Sans Condensed", sans-serif;
+  /* font-family: "Open Sans Condensed", sans-serif; */
+  font-family: "SourceSansProBold";
   font-size: 1rem;
   background-color: #3b578e;
 }
 
 div.btn.btn-three {
   color: #fff;
-  font-family: "Open Sans Condensed", sans-serif;
+  font-family: "SourceSansProBold";
   font-size: 1rem;
   background-color: #3b578e;
 }
@@ -137,6 +182,8 @@ div.btn.btn-three {
   color: #fff;
   transition: all 0.5s;
   position: relative;
+  top: 85px;
+  left: 80px;
 }
 .btn-two span {
   z-index: 2;
@@ -149,6 +196,9 @@ div.btn.btn-three {
   color: #fff;
   transition: all 0.5s;
   margin-right: 1rem;
+  position: relative;
+  top: 85px;
+  left: 60px;
 }
 
 div[class*="box"] {
@@ -170,6 +220,9 @@ input#icl {
   margin-left: 2rem;
   font-family: "SourceSansProBold";
   border-radius: 15px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 input#icl:focus {
@@ -185,6 +238,9 @@ input#vaultvalue {
   margin-left: 2rem;
   font-family: "SourceSansProBold";
   border-radius: 15px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 input#vaultvalue:focus {
@@ -193,4 +249,8 @@ input#vaultvalue:focus {
 
 #cr {
   margin-left: 2rem;
+}
+
+.results{
+  margin-top: 1rem;
 }
