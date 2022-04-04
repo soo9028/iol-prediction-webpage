@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.e5017127.css",
-    "main.js": "/static/js/main.611cdc42.js",
-    "static/js/787.b2e37fe6.chunk.js": "/static/js/787.b2e37fe6.chunk.js",
-    "static/media/SourceSansPro-SemiBold.ttf": "/static/media/SourceSansPro-SemiBold.f2fa8f369db189665539.ttf",
-    "static/media/SourceSansPro-Light.ttf": "/static/media/SourceSansPro-Light.9bbfd7cb5e722de4b9f4.ttf",
-    "static/media/Michroma-Regular.ttf": "/static/media/Michroma-Regular.d2ad050949cf83809690.ttf",
-    "index.html": "/index.html",
-    "main.e5017127.css.map": "/static/css/main.e5017127.css.map",
-    "main.611cdc42.js.map": "/static/js/main.611cdc42.js.map",
-    "787.b2e37fe6.chunk.js.map": "/static/js/787.b2e37fe6.chunk.js.map"
+    "main.css": "/iol-prediction-webpage/static/css/main.9512be57.css",
+    "main.js": "/iol-prediction-webpage/static/js/main.0e70fe75.js",
+    "static/js/787.b2e37fe6.chunk.js": "/iol-prediction-webpage/static/js/787.b2e37fe6.chunk.js",
+    "static/media/SourceSansPro-SemiBold.ttf": "/iol-prediction-webpage/static/media/SourceSansPro-SemiBold.f2fa8f369db189665539.ttf",
+    "static/media/SourceSansPro-Light.ttf": "/iol-prediction-webpage/static/media/SourceSansPro-Light.9bbfd7cb5e722de4b9f4.ttf",
+    "static/media/Michroma-Regular.ttf": "/iol-prediction-webpage/static/media/Michroma-Regular.d2ad050949cf83809690.ttf",
+    "index.html": "/iol-prediction-webpage/index.html",
+    "main.9512be57.css.map": "/iol-prediction-webpage/static/css/main.9512be57.css.map",
+    "main.0e70fe75.js.map": "/iol-prediction-webpage/static/js/main.0e70fe75.js.map",
+    "787.b2e37fe6.chunk.js.map": "/iol-prediction-webpage/static/js/787.b2e37fe6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e5017127.css",
-    "static/js/main.611cdc42.js"
+    "static/css/main.9512be57.css",
+    "static/js/main.0e70fe75.js"
   ]
 }
