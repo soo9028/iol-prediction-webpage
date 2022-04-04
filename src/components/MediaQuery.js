@@ -3,7 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import MainNav from "./MainNav";
 import React from "react";
 
-const Example = () => {
+const MediaQuery = () => {
   const Desktop = ({ children }) => {
     const isDesktop = useMediaQuery({ minWidth: 992 });
     return isDesktop ? children : null;
@@ -51,4 +51,4 @@ const Example = () => {
   // const isMobile = useIsMobile();
 };
 
-export default Example;
+export default MediaQuery;

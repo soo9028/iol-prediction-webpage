@@ -10,38 +10,23 @@ body,
 }
 
 .contents {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ------------ responsive web ----------- */
-@media only screen and (min-width: 960px) {
+
+@media only screen and (max-width: 630px) {
   .navbar {
     width: 100%;
     height: auto;
   }
-}
-@media only screen and (min-width: 1440px) {
-  .navbar {
-    width: 100%;
-    height: auto;
-  }
-}
-@media only screen and (min-width: 2000px) {
-  .navbar {
-    width: 100%;
-    height: auto;
-  }
-}
-@media only screen and (max-device-width: 480px) {
-  .navbar {
-    width: 100%;
-    height: auto;
-  }
-}
-@media only screen and (device-width: 768px) {
-  .navbar {
-    width: 100%;
-    height: auto;
+  .results {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -111,94 +96,77 @@ body,
 }
 
 /* Form - input boxes */
-#aqdvalue {
+input#aqdvalue {
   display: flex;
   border: #e9ecef 1px solid;
   border-radius: 5px;
-  margin-right: 1.5rem;
   font-family: "SourceSansProBold";
   margin-bottom: 1.2rem;
 }
 
-#aqdvalue:focus {
+input#aqdvalue:focus {
   outline: none;
 }
 
-#ltvalue {
+input#ltvalue {
   display: flex;
   border: #e9ecef 1px solid;
   border-radius: 5px;
-  margin-right: 1.5rem;
   font-family: "SourceSansProBold";
 }
 
-#ltvalue:focus {
+input#ltvalue:focus {
   outline: none;
 }
 
-#acavalue {
+input#acavalue {
   display: flex;
   border: #e9ecef 1px solid;
   border-radius: 5px;
-  margin-right: 1.5rem;
   font-family: "SourceSansProBold";
   margin-bottom: 1.2rem;
 }
 
-#acavalue:focus {
+input#acavalue:focus {
   outline: none;
 }
 
 label {
-  font-family: "SourceSansPro";
+  font-family: "Open Sans Condensed", sans-serif;
 }
-
-label#text{
-  margin: 10rem;
-}
-
 
 /* ------------ buttons ------------  */
 
-#calculate {
-  margin: 0;
-}
-div.btn.btn-two {
-  color: #fff;
-  /* font-family: "Open Sans Condensed", sans-serif; */
-  font-family: "SourceSansProBold";
-  font-size: 1rem;
-  background-color: #3b578e;
+.button {
+  background-color: #dee2e6;
+  color: #000000;
+  opacity: 0.8;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  border: 0;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 10%);
+  font-weight: 500;
+  padding: 0.625rem 1.5rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  cursor: pointer;
 }
 
-div.btn.btn-three {
-  color: #fff;
-  font-family: "SourceSansProBold";
-  font-size: 1rem;
-  background-color: #3b578e;
+.buttons {
+  display: flex;
 }
 
 .btn-two {
-  color: #fff;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1rem;
   transition: all 0.5s;
-  position: relative;
-  top: 85px;
-  left: 80px;
-}
-.btn-two span {
-  z-index: 2;
-  display: block;
-  width: 100%;
-  height: 100%;
 }
 
 .btn-three {
-  color: #fff;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1rem;
   transition: all 0.5s;
   margin-right: 1rem;
-  position: relative;
-  top: 85px;
-  left: 60px;
 }
 
 div[class*="box"] {
@@ -247,10 +215,10 @@ input#vaultvalue:focus {
   outline: none;
 }
 
-#cr {
-  margin-left: 2rem;
+label#cr {
+  text-align: center;
 }
 
-.results{
+.results {
   margin-top: 1rem;
 }

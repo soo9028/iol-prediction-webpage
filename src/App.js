@@ -1,14 +1,9 @@
-import logo from "./logo.svg";
-import React, { Component } from "react";
-import "./App.css";
-import MainNav from "./components/MainNav";
-import Example from "./components/Example";
+import React from 'react';
+import './App.css';
+import MainNav from './components/MainNav';
 
 function App() {
-  return(
-    <Example></Example>
-  );
-  
+  return <MainNav></MainNav>;
 }
 
 export default App;
