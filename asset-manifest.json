@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/iol-prediction-webpage/static/css/main.7845af3e.css",
-    "main.js": "/iol-prediction-webpage/static/js/main.e5685fec.js",
+    "main.css": "/iol-prediction-webpage/static/css/main.d5d43e69.css",
+    "main.js": "/iol-prediction-webpage/static/js/main.55e0aa45.js",
     "static/js/787.b2e37fe6.chunk.js": "/iol-prediction-webpage/static/js/787.b2e37fe6.chunk.js",
     "static/media/SourceSansPro-SemiBold.ttf": "/iol-prediction-webpage/static/media/SourceSansPro-SemiBold.f2fa8f369db189665539.ttf",
     "static/media/SourceSansPro-Light.ttf": "/iol-prediction-webpage/static/media/SourceSansPro-Light.9bbfd7cb5e722de4b9f4.ttf",
     "static/media/Michroma-Regular.ttf": "/iol-prediction-webpage/static/media/Michroma-Regular.d2ad050949cf83809690.ttf",
     "index.html": "/iol-prediction-webpage/index.html",
-    "main.7845af3e.css.map": "/iol-prediction-webpage/static/css/main.7845af3e.css.map",
-    "main.e5685fec.js.map": "/iol-prediction-webpage/static/js/main.e5685fec.js.map",
+    "main.d5d43e69.css.map": "/iol-prediction-webpage/static/css/main.d5d43e69.css.map",
+    "main.55e0aa45.js.map": "/iol-prediction-webpage/static/js/main.55e0aa45.js.map",
     "787.b2e37fe6.chunk.js.map": "/iol-prediction-webpage/static/js/787.b2e37fe6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7845af3e.css",
-    "static/js/main.e5685fec.js"
+    "static/css/main.d5d43e69.css",
+    "static/js/main.55e0aa45.js"
   ]
 }
