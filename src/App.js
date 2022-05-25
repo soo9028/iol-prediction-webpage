@@ -1,15 +1,9 @@
-import logo from "./logo.svg";
-import React, { Component } from "react";
-import "./App.css";
-import MainNav from "./components/MainNav";
-import Carousels from "./components/Carousel";
+import React from 'react';
+import './App.css';
+import MainNav from './components/MainNav';
 
 function App() {
-  return (
-    <React.Fragment>
-      <MainNav></MainNav>
-    </React.Fragment>
-  );
+  return <MainNav></MainNav>;
 }
 
 export default App;

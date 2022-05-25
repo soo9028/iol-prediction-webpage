@@ -1,21 +1,53 @@
-@import "https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";
+@import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
 
-html, body {
-  min-height: 100%;
+html,
+body,
+#root,
+.App {
+  height: auto;
   width: 100%;
-  background-color: #f7f9ff;
+  background: #fff;
 }
 
-div#root {
-  background-color: #f7f9ff;
+.contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ------------ responsive web ----------- */
+
+@media only screen and (max-width: 630px) {
+  .navbar {
+    width: 100%;
+    height: auto;
+  }
+  .results {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  .access {
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    margin:0%;
+  }
+  .navbar-expand .navbar-nav {
+    flex-direction: column;
+  }
 }
 
 /* ------------ navbar style ------------ */
 
 .navbar {
+  max-width: 100%;
+  height: 70px;
   background: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   opacity: 0.9;
+  background-color: #f1f3f5;
 }
 
 .navbar-brand {
@@ -36,10 +68,12 @@ div#root {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 3.5s linear;
-  display: flex;
+  display: inline-block;
   font-size: 1.8em !important;
-  font-family: "Michroma";
-  padding-left: 1.5rem;
+  font-family: 'Michroma';
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
 }
 
 @keyframes textclip {
@@ -49,7 +83,8 @@ div#root {
 }
 
 #input {
-  margin: 2em;
+  margin-bottom: 2em;
+  margin-top: 2em;
   flex-direction: column;
 }
 
@@ -70,88 +105,102 @@ div#root {
 }
 
 /* Form - input boxes */
-#aqdvalue {
+input#aqdvalue {
   display: flex;
   border: #e9ecef 1px solid;
   border-radius: 5px;
-  margin-right: 1.5rem;
-  font-family: "SourceSansProBold";
+  font-family: 'SourceSansProBold';
   margin-bottom: 1.2rem;
 }
 
-#aqdvalue:focus {
+input#aqdvalue:focus {
   outline: none;
 }
 
-#ltvalue {
+input#ltvalue {
   display: flex;
   border: #e9ecef 1px solid;
   border-radius: 5px;
-  margin-right: 1.5rem;
-  font-family: "SourceSansProBold";
+  font-family: 'SourceSansProBold';
 }
 
-#ltvalue:focus {
+input#ltvalue:focus {
   outline: none;
 }
 
-#acavalue {
+input#acavalue {
   display: flex;
   border: #e9ecef 1px solid;
   border-radius: 5px;
-  margin-right: 1.5rem;
-  font-family: "SourceSansProBold";
+  font-family: 'SourceSansProBold';
   margin-bottom: 1.2rem;
 }
 
-#acavalue:focus {
+input#acavalue:focus {
   outline: none;
+}
+
+input#iclvalue {
+  display: flex;
+  border: #e9ecef 1px solid;
+  border-radius: 5px;
+  font-family: 'SourceSansProBold';
+}
+
+input#iclvalue {
+  outline: none;
+}
+
+label#icl-value {
+  margin-top: 1.2rem;
 }
 
 label {
-  font-family: "SourceSansPro";
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.access {
+  margin-bottom: 1.5rem;
+  margin-right: 1.2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ------------ buttons ------------  */
 
-#calculate {
-  margin-left: 2rem;
-  margin-bottom: 2rem;
+.button {
+  background-color: #dee2e6;
+  color: #000000;
+  opacity: 0.8;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  border: 0;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 10%);
+  font-weight: 500;
+  padding: 0.625rem 1.5rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  cursor: pointer;
 }
 
-div.btn.btn-two {
-  color: #fff;
-  font-family: "Open Sans Condensed", sans-serif;
-  font-size: 1rem;
-  background-color: #3b578e;
-}
-
-div.btn.btn-three {
-  color: #fff;
-  font-family: "Open Sans Condensed", sans-serif;
-  font-size: 1rem;
-  background-color: #3b578e;
+.buttons {
+  display: flex;
 }
 
 .btn-two {
-  color: #fff;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1rem;
   transition: all 0.5s;
-  position: relative;
-}
-.btn-two span {
-  z-index: 2;
-  display: block;
-  width: 100%;
-  height: 100%;
 }
 
 .btn-three {
-  color: #fff;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1rem;
   transition: all 0.5s;
   margin-right: 1rem;
 }
 
-div[class*="box"] {
+div[class*='box'] {
   height: 33.33%;
   width: 100%;
   display: flex;
@@ -161,36 +210,52 @@ div[class*="box"] {
 
 /*---------- results ------------ */
 
-input#icl {
+div#icl {
   display: flex;
   margin-bottom: 1.5rem;
-  border: none;
-  border-bottom: #e9ecef 1px solid;
-  margin-right: 1.5rem;
+  /* border: none; */
+  /* border-bottom: #e9ecef 1px solid; */
+  margin-right: 3.5rem;
   margin-left: 2rem;
-  font-family: "SourceSansProBold";
-  border-radius: 15px;
+  font-family: 'SourceSansProBold';
+  justify-content: center;
+  align-items: center;
+  min-width: 50px;
 }
 
-input#icl:focus {
+div#icl:focus {
   outline: none;
 }
 
-input#vaultvalue {
+div#vaultvalue {
   display: flex;
   margin-bottom: 1.5rem;
   border: none;
-  border-bottom: #e9ecef 1px solid;
+  /* border-bottom: #e9ecef 1px solid; */
   margin-right: 1.5rem;
   margin-left: 2rem;
-  font-family: "SourceSansProBold";
+  font-family: 'SourceSansProBold';
   border-radius: 15px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  min-width: 50px;
 }
 
-input#vaultvalue:focus {
+div#vaultvalue:focus {
   outline: none;
 }
 
-#cr {
-  margin-left: 2rem;
+label#cr {
+  text-align: center;
+}
+
+.results {
+  margin-top: 1rem;
+}
+
+[contentEditable=true]:empty:not(:focus):before{
+  content:attr(data-text);
+  color: grey;
+  font-family: 'SourceSansProBold';
 }
