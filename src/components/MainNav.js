@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import './MainNav.css';
+import Box from '@material-ui/core/Box';
 
 const MainNav = () => {
   // const [isDesktop, setIsDesktop] = useState(true);
@@ -17,47 +18,78 @@ const MainNav = () => {
   //   if (desktop) setIsDesktop(desktop);
   // }, [desktop]);
 
-  const [aqdValue, setAqdValue] = useState('');
-  const [acaValue, setAcaValue] = useState('');
-  const [ltValue, setLtValue] = useState('');
-  // const [sum, setSum] = useState();
+  // const [aqdValue, setAqdValue] = useState('');
+  // const [acaValue, setAcaValue] = useState('');
+  // const [ltValue, setLtValue] = useState('');
+  // const [iclValue, setIclValue] = useState('');
   const [icl, setIclSize] = useState('');
   const [vault, setVault] = useState('');
+  const [inputs, setInputs] = useState({
+    aqdValue: '',
+    acaValue: '',
+    ltValue: '',
+    iclValue: '',
+  });
 
-  // const calculateSum = () => {
-  //   setSum(new Number(aqdValue + acaValue + ltValue));
-  // };
+  const { aqdValue, acaValue, ltValue, iclValue } = inputs;
 
-  const reset = () => {
-    setAcaValue('');
-    setAqdValue('');
-    setLtValue('');
-    setIclSize([]);
-    setVault([]);
+  const onChange = (e) => {
+    const { value, name } = e.target; //e.target에서 name, value 추출
+    setInputs({
+      ...inputs, //기존의 inputs 객체 복사
+      [name]: value, //name키를 가진 값을 value로 설정
+    });
+  };
 
+  const reset = (e) => {
+    setInputs({
+      aqdValue: '',
+      acaValue: '',
+      ltValue: '',
+      iclValue: '',
+    });
+    setVault('');
+    setIclSize('');
     console.log(vault);
-    console.log(icl);
+    console.log(iclValue);
     console.log(aqdValue);
   };
 
+  // const handleChange = async (e) => {
+  //   console.log(acaValue);
+  //   var number = Number(e.target.value);
+  //   setAcaValue({ [e.target.name]: number });
+  //   console.log(acaValue);
+  //   console.log(typeof acaValue);
+  // };
+
+  // const sum = () => {
+  //   const Sum = Number(acaValue) + Number(aqdValue) + 1;
+  //   console.log(Sum);
+  // };
+
   const calculateIclSize = () => {
     const calculate =
-      5.568 - 0.458 * aqdValue + 0.474 * acaValue + 0.768 * ltValue;
-    setIclSize(calculate);
-
-    const vaultValue =
-      -1077.44 +
-      129.82 * aqdValue +
-      -134.3 * acaValue +
-      -217.59 * ltValue +
-      283.3 * calculate;
-    setVault(vaultValue);
-    console.log(icl);
+      5.568 -
+      0.458 * Number(aqdValue) +
+      0.474 * Number(acaValue) +
+      0.768 * Number(ltValue);
+    setIclSize(Number(calculate).toFixed(2));
+    console.log(typeof calculate);
+    console.log(typeof icl);
   };
 
-  // console.log(typeof aqdValue);
-  // console.log(typeof acaValue);
-  // console.log(typeof ltValue);
+  const calculateVaultValue = () => {
+    const vaultValue =
+      -1077.44 +
+      129.82 * Number(aqdValue) +
+      -134.3 * Number(acaValue) +
+      -217.59 * Number(ltValue) +
+      283.3 * Number(iclValue);
+    setVault(Number(vaultValue).toFixed(2));
+    console.log(vault);
+    console.log(typeof vault);
+  };
 
   return (
     <>
@@ -65,12 +97,16 @@ const MainNav = () => {
         <Navbar.Brand href='/' className='navbar-brand'>
           LOOCUS IOL
         </Navbar.Brand>
-        <Navbar.Collapse className='justify-content-end'>
-          <Nav activeKey={window.location.pathname}>
-            <Nav.Link to='/signup'>Signup</Nav.Link>
-            <Nav.Link to='/login'>Login</Nav.Link>
+        {/* <Navbar.Collapse className='justify-content-end'>
+          <Nav activeKey={window.location.pathname} className='access'>
+            <Nav.Link to='/signup' id='signup'>
+              Signup
+            </Nav.Link>
+            <Nav.Link to='/login' id='login'>
+              Login
+            </Nav.Link>
           </Nav>
-        </Navbar.Collapse>
+        </Navbar.Collapse> */}
       </Navbar>
 
       <br />
@@ -82,12 +118,10 @@ const MainNav = () => {
             <input
               type='number'
               id='aqdvalue'
-              name='aqdvalue'
-              value={aqdValue}
+              name='aqdValue'
               placeholder='Aqd(mm)'
-              onChange={(e) => {
-                setAqdValue(Number(e.target.value));
-              }}
+              value={aqdValue}
+              onChange={onChange}
             />
           </label>
 
@@ -96,15 +130,10 @@ const MainNav = () => {
             <input
               type='number'
               id='acavalue'
-              name='acavalue'
-              value={acaValue}
-              pattern='(?=.*\d).{1,8}'
-              required
-              title='최소 1자, 최대 7자까지 입력가능합니다.'
+              name='acaValue'
               placeholder='ACA(mm)'
-              onChange={(e) => {
-                setAcaValue(Number(e.target.value));
-              }}
+              value={acaValue}
+              onChange={onChange}
             />
           </label>
 
@@ -113,15 +142,22 @@ const MainNav = () => {
             <input
               type='number'
               id='ltvalue'
-              name='ltvalue'
-              value={ltValue}
-              pattern='(?=.*\d).{1,8}'
-              required
-              title='최소 1자, 최대 7자까지 입력가능합니다.'
+              name='ltValue'
               placeholder='LT(mm)'
-              onChange={(e) => {
-                setLtValue(Number(e.target.value));
-              }}
+              value={ltValue}
+              onChange={onChange}
+            />
+          </label>
+
+          <label id='icl-value'>
+            ICL size
+            <input
+              type='number'
+              id='iclvalue'
+              name='iclValue'
+              placeholder='ICL Size(mm)'
+              value={iclValue}
+              onChange={onChange}
             />
           </label>
         </form>
@@ -131,17 +167,13 @@ const MainNav = () => {
             className='button btn-three'
             onClick={() => {
               calculateIclSize();
+              calculateVaultValue();
             }}
           >
             Calculate
           </button>
 
-          <button
-            className='button btn-two'
-            onClick={() => {
-              reset();
-            }}
-          >
+          <button className='button btn-two' onClick={reset}>
             Reset
           </button>
         </div>
@@ -150,9 +182,9 @@ const MainNav = () => {
 
         <div className='results' style={{ display: 'inline-flex' }}>
           <label id='cr'>Optimal ICL Size</label>
-          <input id='icl' placeholder='' value={icl}></input>
+          <div id='icl'>{icl}</div>
           <label id='cr'>Post-operative ICL Vault</label>
-          <input id='vaultvalue' placeholder='' value={vault}></input>
+          <div id='vaultvalue'>{vault}</div>
         </div>
       </div>
     </>
